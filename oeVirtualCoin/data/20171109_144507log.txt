@@ -1,0 +1,8 @@
+octopusEngine - VirtualCoin02 - beta
+log: 20171109_144507
+1: 5Hy1xDtA8EU4ZbqdydL3ZHgXBWeY3C4Q7TbrYP8suni9sZoYGpL
+2: <pybitcoin.publickey.BitcoinPublicKey instance at 0xaafcb7ec>
+3: 0485b1c78dc208de6e683be9309f51e427f1d2ed51ae8349e949daae53bf77dce258cb3c2a3683e7acc94294079f208a1714d85141465023d80051b0eececbfa81
+4: 16gNBUoDJ1PaxeBN5rSyDvSQiaFibk43ac
+5Hy1xDtA8EU4ZbqdydL3ZHgXBWeY3C4Q7TbrYP8suni9sZoYGpL
+16gNBUoDJ1PaxeBN5rSyDvSQiaFibk43ac
