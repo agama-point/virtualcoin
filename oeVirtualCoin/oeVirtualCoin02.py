@@ -234,11 +234,12 @@ while True:
                 addLog(logFile,"4: "+wbtc)
         
 	if bt10.testClickButt(x,y):
-                print("---test unspent---")               
-                h = history(wbtc)
-                print h
-                u = unspent(wbtc)
-                print u
+                print("---test unspent---")
+                if (ch1.getChBox()):		
+                  h = history(wbtc)
+                  print h
+                  u = unspent(wbtc)
+                  print u
                 print(oeShort(wbtc,8)+" > "+str(oeJTxSumVal(unspent(wbtc))))
                              
         if bt9.testClickButt(x,y):  # test wallet      
