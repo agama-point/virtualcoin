@@ -92,6 +92,7 @@ def addLog(logFile,co):
     #fLog.write("procTemp:"+str(pomTemp))
     fLog.write(co+"\n")
     fLog.close
+
 def createWall(pk):
    if (len(pk)>20):
       private_key = BitcoinPrivateKey(pk) 
@@ -103,6 +104,13 @@ def createWall(pk):
    pubhex =public_key.to_hex()
    wall = public_key.address()
    return private_key, pkwif,public_key,pubhex, wall  
+
+#------------------------json tx---------------------------
+def oeJTxSumVal(j):
+  sumsat = 0
+  for uval in j:
+    sumsat =sumsat + uval["value"]
+  return float(sumsat)/100000000
     
     
     
