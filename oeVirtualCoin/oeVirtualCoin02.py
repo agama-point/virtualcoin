@@ -235,9 +235,9 @@ while True:
         
 	if bt10.testClickButt(x,y):
                 print("---test unspent---")               
-                h = history(addr)
+                h = history(wbtc)
                 print h
-                u = unspent(addr)
+                u = unspent(wbtc)
                 print u
                 print(oeShort(wbtc,8)+" > "+str(oeJTxSumVal(unspent(wbtc))))
                              
