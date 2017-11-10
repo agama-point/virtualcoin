@@ -222,7 +222,10 @@ while True:
                 
         if bt6.testClickButt(x,y):
                 print("---gen1---")
-                pkall = createWall("x")
+		if (ch1.getChBox()):
+                  pkall = createWall(getPBTC())
+		else:
+		  pkall = createWall("x")
 		        #private_key, pkwif,public_key,pubhex, wall 
                 print "time info>" + str(time.time()-startTime) 
                 print("0: "+str(pkall[0]))
@@ -244,7 +247,7 @@ while True:
 		print(oeShort(wbtc,8)+" > "+sumUnsp)
 		mxStr(win, myMatrix,"("+sumUnsp+")",5,mxy+20)
                              
-        if bt9.testClickButt(x,y):  # test wallet      
+        if bt9.testClickButt(x,y):  # test wallet 
                 setMat(myMatrix,0)
                 mxy = 128
                 mxStr(win, myMatrix,notePrefix+logTime,5,mxy)
