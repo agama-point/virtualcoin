@@ -130,6 +130,9 @@ def startWin():
   mxStr(win, myMatrix,wbtc,5,155)
 
   ## qr test wall
+  #qrBig = pyqrcode.create(w11,error="L",version=27,mode="binary")
+  #qrBig.png("qr.png", scale = 6,module_color=[0,0,0,128],background=[0xff,0xff,0xcc])	
+	
   #createQR(wbtc+wbtc+wbtc,3)
   #obr = pygame.image.load(myDir+"tempqr.png") #src/knize.bmp
   #obrRect = obr.get_rect()
