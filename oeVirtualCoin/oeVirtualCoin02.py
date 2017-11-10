@@ -4,6 +4,8 @@ import pygame, random, sys, os, time
 from pygame.locals import * # MOUSEBUTTONDOWN...
 from json import *
 from datetime import datetime 
+from bitcoin import *
+
 startTime = time.time()
 pygame.init()
 
@@ -11,12 +13,6 @@ from oeLib.oePygame import *
 from myWallets import *
 from oeLib.oeCrypto import * 
 testCrypto = True
-
-global font 
-global myMatrix     
-global myMatrix2    
-global myMatSil     
-global myMatFilt   
 
 font={}             # pamet, ve ktere je ulozeny font, nacetny z externiho souboru
 myMatrix={}     # hlavní velká
@@ -236,7 +232,12 @@ while True:
                 addLog(logFile,"3: "+str(pkall[3]))
                 wbtc=str(pkall[4])
                 addLog(logFile,"4: "+wbtc)
-                
+        
+	 if bt10.testClickButt(x,y):
+                print("---test unspent---")
+                w11 = "11r118H2Qv4oHfjFuJnuU8GZHGNqwEH9e"
+                print(oeShort(w11,8)+" > "+str(oeJTxSumVal(unspent(w11))))
+             
                 
         if bt9.testClickButt(x,y):  # test wallet      
                 setMat(myMatrix,0)
