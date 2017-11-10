@@ -2,6 +2,7 @@
 import pyqrcode
 import pygame, random, sys, os, time
 from pygame.locals import * # MOUSEBUTTONDOWN...
+from json import *
 from datetime import datetime 
 startTime = time.time()
 pygame.init()
@@ -18,10 +19,10 @@ global myMatSil
 global myMatFilt   
 
 font={}             # pamet, ve ktere je ulozeny font, nacetny z externiho souboru
-myMatrix={}     # hlavnÌ velk·
-myMatrix2={}    # pomocn· vel·import pyqrcode
-myMatSil={}     # öed· mal·
-myMatFilt={}    # filtrovan· mal·   
+myMatrix={}     # hlavn√≠ velk√°
+myMatrix2={}    # pomocn√° vel√°import pyqrcode
+myMatSil={}     # ≈°ed√° mal√°
+myMatFilt={}    # filtrovan√° mal√°   
 
 myDir = "data/"
 notePrefix="B.test:"
