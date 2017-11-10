@@ -235,6 +235,10 @@ while True:
         
 	if bt10.testClickButt(x,y):
                 print("---test unspent---")               
+                h = history(addr)
+                print h
+                u = unspent(addr)
+                print u
                 print(oeShort(wbtc,8)+" > "+str(oeJTxSumVal(unspent(wbtc))))
                              
         if bt9.testClickButt(x,y):  # test wallet      
