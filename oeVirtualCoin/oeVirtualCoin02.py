@@ -240,7 +240,9 @@ while True:
                   print h
                   u = unspent(wbtc)
                   print u
-                print(oeShort(wbtc,8)+" > "+str(oeJTxSumVal(unspent(wbtc))))
+                sumUnsp = str(oeJTxSumVal(unspent(wbtc)))
+		print(oeShort(wbtc,8)+" > "+sumUnsp)
+		mxStr(win, myMatrix,"("+sumUnsp+")",5,mxy+20)
                              
         if bt9.testClickButt(x,y):  # test wallet      
                 setMat(myMatrix,0)
