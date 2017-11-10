@@ -233,12 +233,10 @@ while True:
                 wbtc=str(pkall[4])
                 addLog(logFile,"4: "+wbtc)
         
-	 if bt10.testClickButt(x,y):
-                print("---test unspent---")
-                w11 = "11r118H2Qv4oHfjFuJnuU8GZHGNqwEH9e"
-                print(oeShort(w11,8)+" > "+str(oeJTxSumVal(unspent(w11))))
-             
-                
+	if bt10.testClickButt(x,y):
+                print("---test unspent---")               
+                print(oeShort(wbtc,8)+" > "+str(oeJTxSumVal(unspent(wbtc))))
+                             
         if bt9.testClickButt(x,y):  # test wallet      
                 setMat(myMatrix,0)
                 mxy = 128
