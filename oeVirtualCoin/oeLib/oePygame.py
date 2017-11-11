@@ -267,10 +267,10 @@ def loadMat(window,filePng,myMatrix,sel):
        getRGB=cR+cG+cB
        #print getRGB
        if (getRGB <399):  # 765/384
-          myMatrix[x,y]= 0
+          myMatrix[x,y]= 7
           expBin = expBin+"0"
        else:      
-          myMatrix[x,y]= 7
+          myMatrix[x,y]= 0
           expBin = expBin+"1"
        ib=ib+1
        if (ib>200):
