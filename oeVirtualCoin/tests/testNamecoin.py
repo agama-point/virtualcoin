@@ -2,7 +2,8 @@ from pybitcoin import BitcoinPrivateKey
 
 class NamecoinPrivateKey(BitcoinPrivateKey):
   _pubkeyhash_version_byte = 52
-
+  
+private_key = BitcoinPrivateKey()  
 namecoin_private_key = NamecoinPrivateKey(private_key.to_hex())
 ncpkwif = namecoin_private_key.to_wif()
 print ncpkwif 
