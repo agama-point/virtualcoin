@@ -5,6 +5,11 @@ from pybitcoin import BitcoinPublicKey
 
 #print bin( ~ np.uint64(5)) #8,16,32,64
 
+#bip32_master_key : (seed) -> bip32 master key
+#bip32_ckd : (private or public bip32 key, i) -> child key
+#bip32_privtopub : (private bip32 key) -> public bip32 key
+#bip32_extract_key : (private or public bip32_key) -> privkey or pubkey
+
 class LitecoinPrivateKey(BitcoinPrivateKey):
     _pubkeyhash_version_byte = 48
 
