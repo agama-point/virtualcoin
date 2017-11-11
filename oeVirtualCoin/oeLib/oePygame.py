@@ -101,28 +101,6 @@ def addnoiseMat(myMatrix):
          myMatrix[x,y]= myMatrix[x,y]                  
       else:
          myMatrix[x,y]= 7
-         
-def infoMat(myMatrix,sel,how): # 0 for clear, 7 for black
-  ih=0
-  for x in range(hA):
-    for y in range(hB):
-      ih=ih+1
-      if (sel==3):
-         if (x%2):    
-            myMatrix[x,y]= 0
-         else:    
-            myMatrix[x,y]= 7  
-      else: 
-       try:
-         if (str(how)[ih+2]=="0"):
-           myMatrix[y,x]= 0
-         else:    
-           myMatrix[y,x]= 7
-       except:
-         err=True
-            
-       # if (x<10):         
-      #    myMatrix[x,y]= 0 
   
 def creaMatSil(myMatrix):
   for x in range(hA/2):
@@ -251,6 +229,28 @@ def saveMat(window,filePng,myMatrix):
          pygame.draw.line(window,colCase,(x,y),(x+1,y+1),1)
    #fileName = myDir+datetime.now().strftime("%Y%m%d_%H%M%S") +'.png'
    pygame.image.save(window,filePng)
+   
+def infoMat(myMatrix,sel,how): # 0 for clear, 7 for black
+  ih=0
+  for y in range(hB):
+    for x in range(hA):
+      ih=ih+1
+      if (sel==3):
+         if (x%2):    
+            myMatrix[x,y]= 0
+         else:    
+            myMatrix[x,y]= 7  
+      else: 
+       try:
+         if (str(how)[ih+2]=="0"):
+           myMatrix[x,y]= 0
+         else:    
+           myMatrix[x,y]= 7
+       except:
+         err=True
+            
+       # if (x<10):         
+      #    myMatrix[x,y]= 0    
       
 def loadMat(window,filePng,myMatrix,sel):
    expBin = "0b"
