@@ -1,19 +1,41 @@
-from oeCrypto import *
+#from oeCrypto import *
+import hashlib, binascii
 
-def strto6bin(mystr):
+def strtobin(str):
+  return bin(reduce(lambda x, y: 256*x+y, (ord(c) for c in str), 0))
+   
+def bintostr(bin):
+  n = int(bin, 2)
+  return binascii.unhexlify('%x' % n)
+
+
+def strtobin7(mystr):
   ixs = 0
+  retstr =""
   for si in mystr:
      ##     bin5 = (bin(int(si, base=16))) 
-     bin5 = strtobin(si)[-6:]
-     print mystr[ixs],bin5
+     bin7 = strtobin(si)[-7:].replace("b", "0")
+     #print mystr[ixs],bin7
      ixs = ixs+1
+     retstr=retstr+bin7
+  return retstr
 
-mystr="abcdefgh-123456789.xyz*-=ABC"
+def bin7tostr(bstr):
+  retstr =""
+  for isx in range (len(bstr)/7):
+    bin7 ="0b"+bstr[isx*7:isx*7+7]
+    #print isx,bin7,bintostr(bin7)
+    retstr=retstr+bintostr(bin7)
+  return retstr  
+
+mystr="abc123ABC"
 
 
 print "---"
-strto6bin(mystr)
-
+print mystr 
+b7s = strtobin7(mystr)
+print b7s
+print bin7tostr(b7s)
 """
 print mystr+" s2b: "+strtobin(mystr)
 
