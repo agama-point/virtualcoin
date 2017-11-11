@@ -194,27 +194,25 @@ while True:
         if (ch2c.getChBox()): coin = "NMC"	
         if (ch3c.getChBox()): coin = "VTC"	
         
-        if bt1.testClickButt(x,y):
+        if bt1.testClickButt(x,y): #clear
                 setMat(myMatrix,0)
                 plotMat(win,myMatrix)
                 print "time clear>" + str(time.time()-startTime)  
         
-        if bt3.testClickButt(x,y):
+        if bt3.testClickButt(x,y): #invert
                 #mxStr(win, myMatrix,"invert",5,155)
                 invertMat(myMatrix)
                 plotMat(win,myMatrix)
                 print "time inv>" + str(time.time()-startTime)
                 
-        if bt5.testClickButt(x,y):
+        if bt5.testClickButt(x,y): #noise
                 addnoiseMat(myMatrix)
                 #mxStr(win, myMatrix,"noise",5,155)
                 plotMat(win,myMatrix)
-                print "time noise>" + str(time.time()-startTime)
-                
-                         
-                
-        if bt7.testClickButt(x,y):
-                print("---save---info---")
+                print "time noise>" + str(time.time()-startTime)             
+                                         
+        if bt7.testClickButt(x,y): #info
+		print("---save---info---")
                 print(cisloCrypto)
                 wifinfo = numtowif(cisloCrypto) 
                 print("wif:"+wifinfo)
@@ -222,7 +220,10 @@ while True:
                 hexinfo = hex(cislo)
                 print("hex:"+hexinfo)
                 
-                infoMat(myMatrix,sel,hextobin(hexinfo))
+		if (ch1.getChBox()): #sel1=test	
+                   infoMat(myMatrix,sel,"0b01010100110011001100000111110101010101")
+                else:
+		   infoMat(myMatrix,sel,hextobin(hexinfo))
                 plotMat(win,myMatrix)
                 print "time info save>" + str(time.time()-startTime)    
              
