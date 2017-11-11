@@ -27,7 +27,9 @@ logFile = myDir+logTime+"log.txt"
 fileJpg = myDir+logTime+".jpg"
 filePng = myDir+logTime+".png"
 wbtc = getWBTC()
+wcoin = wbtc
 pbtc=wbtc+wbtc
+pcoin = pbtc
 
 addLog(logFile,"octopusEngine - VirtualCoin02 - beta")
 addLog(logFile,"log: "+str(logTime))
@@ -223,18 +225,18 @@ while True:
         if bt6.testClickButt(x,y):
                 print("---gen1---")
 		if (ch1.getChBox()):
-                  pkall = createWall(getPBTC())
+                  pkall = createWall(coin,getPBTC())
 		else:
-		  pkall = createWall("x")
+		  pkall = createWall(coin,"x")
 		        #private_key, pkwif,public_key,pubhex, wall 
                 print "time info>" + str(time.time()-startTime) 
                 print("0: "+str(pkall[0]))
-                pbtc=str(pkall[1])
-                addLog(logFile,"1: "+pbtc)
+                pcoin=str(pkall[1])
+                addLog(logFile,"1: "+pcoin)
                 addLog(logFile,"2: "+str(pkall[2]))
                 addLog(logFile,"3: "+str(pkall[3]))
-                wbtc=str(pkall[4])
-                addLog(logFile,"4: "+wbtc)
+                wcoin=str(pkall[4])
+                addLog(logFile,"4: "+wcoin)
         
 	if bt10.testClickButt(x,y):
                 print("---test unspent---")
@@ -251,26 +253,26 @@ while True:
                 setMat(myMatrix,0)
                 mxy = 128
                 mxStr(win, myMatrix,notePrefix+logTime,5,mxy)
-                mxStr(win, myMatrix,wbtc,5,mxy+10)
-                mxStr(win, myMatrix,".....",5,mxy+20)
+                mxStr(win, myMatrix,wcoin,5,mxy+10)
+                mxStr(win, myMatrix,"...",5,mxy+20)
                 #mxStr(win, myMatrix,(wbtc+wbtc),5,161)            
-                mxStr(win, myMatrix,oeShort(pbtc,22),5,mxy+30)    
+                mxStr(win, myMatrix,oeShort(pcoin,22),5,mxy+30)    
                 mxStr(win, myMatrix,"octopusEngine",5,mxy+40) 
            
                 filetPng = myDir+"tempqr.png" 
                 qrx=5
                 qry=5
                 
-                addLog(logFile,pbtc)
-                createQR(pbtc,2)
+                addLog(logFile,pcoin)
+                createQR(pcoin,2)
                 loadMatQR(win,filetPng,myMatrix,150,qry)
                 obr = pygame.image.load(filetPng) 
                 obrRect = obr.get_rect()
                 obrRect = obrRect.move(hX*2+100,0)
                 win.blit(obr, obrRect)                               
                 
-                createQR(wbtc,3)
-                addLog(logFile,wbtc)
+                createQR(wcoin,3)
+                addLog(logFile,wcoin)
                 loadMatQR(win,filetPng,myMatrix,qrx,qry)                
                 obr = pygame.image.load(filetPng) 
                 obrRect = obr.get_rect()
