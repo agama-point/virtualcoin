@@ -107,20 +107,21 @@ def infoMat(myMatrix,sel,how): # 0 for clear, 7 for black
   for x in range(hA):
     for y in range(hB):
       ih=ih+1
-      if (sel==1):
+      if (sel==3):
+         if (x%2):    
+            myMatrix[x,y]= 0
+         else:    
+            myMatrix[x,y]= 7  
+      else: 
        try:
-         if (how[ih+2]=="0"):
+         if (str(how)[ih+2]=="0"):
            myMatrix[y,x]= 0
          else:    
            myMatrix[y,x]= 7
        except:
          err=True
-      else:      
-       if (x%2):    
-         myMatrix[x,y]= 0
-       else:    
-         myMatrix[x,y]= 7  
-      # if (x<10):         
+            
+       # if (x<10):         
       #    myMatrix[x,y]= 0 
   
 def creaMatSil(myMatrix):
