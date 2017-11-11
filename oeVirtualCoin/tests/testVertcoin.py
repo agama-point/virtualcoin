@@ -1,7 +1,7 @@
 from pybitcoin import BitcoinPrivateKey
 
 class VertcoinPrivateKey(BitcoinPrivateKey):
-    _pubkeyhash_version_byte = 72
+    _pubkeyhash_version_byte = 71
     
 private_key = BitcoinPrivateKey()
 vertcoin_private_key = VertcoinPrivateKey(private_key.to_hex())
