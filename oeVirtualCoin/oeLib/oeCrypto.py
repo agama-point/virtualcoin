@@ -113,6 +113,10 @@ def createWall(coin,pk):
    else:
       private_key = BitcoinPrivateKey() 
    
+   if (coin =="LTC"): private_key = LitecoinPrivateKey(private_key.to_hex())
+   if (coin =="NMC"): private_key = NamecoinPrivateKey(private_key.to_hex())
+   if (coin =="VTC"): private_key = VertcoinPrivateKey(private_key.to_hex())
+   
    pkwif = private_key.to_wif()
    public_key = private_key.public_key()
    pubhex =public_key.to_hex()
