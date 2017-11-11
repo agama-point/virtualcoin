@@ -107,12 +107,12 @@ def addLog(logFile,co):
     fLog.write(co+"\n")
     fLog.close
 
-def createWall(pk):
+def createWall(coin,pk):
    if (len(pk)>20):
       private_key = BitcoinPrivateKey(pk) 
    else:
       private_key = BitcoinPrivateKey() 
-	
+   
    pkwif = private_key.to_wif()
    public_key = private_key.public_key()
    pubhex =public_key.to_hex()
