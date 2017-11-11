@@ -72,8 +72,12 @@ def strtobin(str):
   return bin(reduce(lambda x, y: 256*x+y, (ord(c) for c in str), 0))
    
 def bintostr(bin):
-  n = int(bin, 2)
-  return binascii.unhexlify('%x' % n)
+  try:  
+     n = int(bin, 2)
+     sret = binascii.unhexlify('%x' % n)
+  exept:
+     sret = "*"
+  return sret
 
 def strtobin7(mystr):
   ixs = 0
