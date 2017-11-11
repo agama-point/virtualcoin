@@ -14,11 +14,11 @@ from myWallets import *
 from oeLib.oeCrypto import * 
 testCrypto = True
 
-font={}             # pamet, ve ktere je ulozeny font, nacetny z externiho souboru
-myMatrix={}     # hlavní velká
-myMatrix2={}    # pomocná veláimport pyqrcode
-myMatSil={}     # šedá malá
-myMatFilt={}    # filtrovaná malá   
+font={}             # font from extern file
+myMatrix={}     # main
+myMatrix2={}    # temp
+myMatSil={}     # 
+myMatFilt={}    # filt   
 
 myDir = "data/"
 notePrefix="B.test:"
@@ -185,6 +185,10 @@ while True:
         if (ch1.getChBox()): sel = 2
         if (ch2.getChBox()): sel = 5
         if (ch3.getChBox()): sel = 10
+		
+	ch1c.setChBox(x,y)
+        ch2c.setChBox(x,y)
+        ch3c.setChBox(x,y)	
 	coin = "BTC"	
 	if (ch1c.getChBox()): coin = "LTC"	
         if (ch2c.getChBox()): coin = "NMC"	
