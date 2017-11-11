@@ -9,5 +9,5 @@ lcpkwif = litecoin_private_key.to_wif()
 print lcpkwif 
 
 litecoin_public_key = litecoin_private_key.public_key()
-lcaddr = litcoin_public_key.address()
+lcaddr = litecoin_public_key.address()
 print "LTC.addr: "+lcaddr
