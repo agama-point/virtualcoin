@@ -5,7 +5,7 @@ class LitecoinPrivateKey(BitcoinPrivateKey):
     
 private_key = BitcoinPrivateKey()
 litcoin_private_key = LitecoinPrivateKey(private_key.to_hex())
-lcpkwif = namecoin_private_key.to_wif()
+lcpkwif = litecoin_private_key.to_wif()
 print lcpkwif 
 
 litecoin_public_key = litecoin_private_key.public_key()
