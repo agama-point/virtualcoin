@@ -11,6 +11,6 @@ print ncpkwif
 namecoin_public_key = namecoin_private_key.public_key()
 ncaddr = namecoin_public_key.address()
 #'MyMFt8fQdZ6rEyDhZbe2vd19gD8gzagr7Z'
-print ncaddr
+print "NMC.addr: "+ ncaddr
 
 #explorer https://bchain.info/NMC/addr/N83EcwrAMDWicACS7u42E1X8x8d4vua1Av
