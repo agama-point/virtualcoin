@@ -259,7 +259,7 @@ def loadMat(window,filePng,myMatrix,sel):
    obrRect = obr.get_rect()
    window.blit(obr, obrRect)    
    #pygame.display.flip()
-   for y in range(hB):
+   for y in range(3): #hB 
     for x in range(hA):  #hB
        cR = window.get_at((x,y))[0] # get RGB of one pixel from camera-image 
        cG = window.get_at((x,y))[1]
@@ -273,8 +273,7 @@ def loadMat(window,filePng,myMatrix,sel):
           myMatrix[x,y]= 0
           expBin = expBin+"0"
        ib=ib+1
-       if (ib>512):
-         ib=512
+       if (ib>1024): ib=1024
    return expBin          
         
 def loadMatQR(window,filePng,myMatrix,dx,dy): #  invert
