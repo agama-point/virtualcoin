@@ -1,4 +1,5 @@
 #import numpy as np
+import hashlib, binascii
 from bitcoin import *
 from pybitcoin import BitcoinPrivateKey
 from pybitcoin import BitcoinPublicKey
@@ -74,11 +75,24 @@ def bintostr(bin):
   n = int(bin, 2)
   return binascii.unhexlify('%x' % n)
 
-def oeN2Wtest(num):
-	print("---")
-	print(num)
-	print(hex(num))
-	print(numtowif(num))
+def strtobin7(mystr):
+  ixs = 0
+  retstr =""
+  for si in mystr:
+     ##     bin5 = (bin(int(si, base=16))) 
+     bin7 = strtobin(si)[-7:].replace("b", "0")
+     #print mystr[ixs],bin7
+     ixs = ixs+1
+     retstr=retstr+bin7
+  return retstr
+
+def bin7tostr(bstr):
+  retstr =""
+  for isx in range (len(bstr)/7):
+    bin7 ="0b"+bstr[isx*7:isx*7+7]
+    #print isx,bin7,bintostr(bin7)
+    retstr=retstr+bintostr(bin7)
+  return retstr   
 
 def oeShort(s,num):
   return str(s[:num])+"..."+str(s[-num:])  
