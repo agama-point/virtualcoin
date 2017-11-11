@@ -26,6 +26,7 @@ logTime = datetime.now().strftime("%Y%m%d_%H%M%S")
 logFile = myDir+logTime+"log.txt"
 fileJpg = myDir+logTime+".jpg"
 filePng = myDir+logTime+".png"
+filetPng = myDir+"temp.png"
 
 coin="BTC" #LTC,NMC,VTC
 wbtc = getWBTC()
@@ -234,7 +235,6 @@ while True:
              
         if bt4.testClickButt(x,y): #info load
                 print("---load---info---")
-                filetPng = myDir+"temp.png"
                 myBin = loadMat(win,filetPng,myMatrix,sel)
                 print("load bin: ")
 		print(myBin[:100])
@@ -312,6 +312,7 @@ while True:
                   winMat = pygame.display.set_mode([hA,hB]) # Create the pygame matrix window
                   #plotMat(winMat,myMatrix)             
                   saveMat(winMat,filePng,myMatrix)
+		  saveMat(winMat,filetPng,myMatrix)
                   print("---ok-save: "+filePng)
                   win = pygame.display.set_mode([sizeWinX,sizeWinY]) # Create the pygame window
                   win.fill(colBla)
