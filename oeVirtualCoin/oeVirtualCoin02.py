@@ -240,10 +240,10 @@ while True:
                 
         if bt6.testClickButt(x,y):
                 print("---gen1---")
-		if (ch1.getChBox()):
+		if (ch1.getChBox()): #sel1 = from PK
                   pkall = createWall(coin,getPBTC())
 		else:
-		  pkall = createWall(coin,"x")
+		  pkall = createWall(coin,"x") #new PK / entropy...
 		        #private_key, pkwif,public_key,pubhex, wall 
                 print "time info>" + str(time.time()-startTime) 
                 print("0: "+str(pkall[0]))
