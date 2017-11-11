@@ -221,7 +221,8 @@ while True:
                 #print("hex:"+hexinfo)
                 
 		if (ch1.getChBox()): #sel1=test	
-                   infoMat(myMatrix,sel,"0b01010100110011001100000111110101010101")
+                   #infoMat(myMatrix,sel,"0b01010100110011001100000111110101010101")
+		   infoMat(myMatrix,sel,strtobin7("abcdefgxyz123567ABCDXYZ"))
                 else:
 		   infoMat(myMatrix,sel,strtobin7(wifinfo))
                 plotMat(win,myMatrix)
