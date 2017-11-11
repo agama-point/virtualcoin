@@ -212,19 +212,21 @@ while True:
                 print "time noise>" + str(time.time()-startTime)             
                                          
         if bt7.testClickButt(x,y): #info save
-		print("---save---info---")
-                print(cisloCrypto)
+		print("---save---info---")                
                 wifinfo = numtowif(cisloCrypto) 
-                print("wif:"+wifinfo)
+                #print("wif:"+wifinfo)
                 #infostr = strtobin(wifcislo)
                 #hexinfo = hex(cislo)
                 #print("hex:"+hexinfo)
-                
+                teststr = "abcdefgxyz123567ABCDXYZ"
 		if (ch1.getChBox()): #sel1=test	
                    #infoMat(myMatrix,sel,"0b01010100110011001100000111110101010101")
-		   infoMat(myMatrix,sel,strtobin7("abcdefgxyz123567ABCDXYZ"))
+		   infoMat(myMatrix,sel,strtobin7(teststr))
+		   print teststr,strtobin7(teststr)	
                 else:
 		   infoMat(myMatrix,sel,strtobin7(wifinfo))
+		   print(cisloCrypto)
+		   print wifinfo,strtobin7(wifinfo)
                 plotMat(win,myMatrix)
                 print "time info save>" + str(time.time()-startTime)    
              
