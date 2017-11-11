@@ -268,13 +268,13 @@ def loadMat(window,filePng,myMatrix,sel):
        #print getRGB
        if (getRGB <399):  # 765/384
           myMatrix[x,y]= 7
-          expBin = expBin+"0"
+          expBin = expBin+"1"
        else:      
           myMatrix[x,y]= 0
-          expBin = expBin+"1"
+          expBin = expBin+"0"
        ib=ib+1
-       if (ib>200):
-         ib=200
+       if (ib>256):
+         ib=256
    return expBin          
         
 def loadMatQR(window,filePng,myMatrix,dx,dy): #  invert
