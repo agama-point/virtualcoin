@@ -5,6 +5,15 @@ from pybitcoin import BitcoinPublicKey
 
 #print bin( ~ np.uint64(5)) #8,16,32,64
 
+class LitecoinPrivateKey(BitcoinPrivateKey):
+    _pubkeyhash_version_byte = 48
+
+class NamecoinPrivateKey(BitcoinPrivateKey):
+  _pubkeyhash_version_byte = 52
+
+class VertcoinPrivateKey(BitcoinPrivateKey):
+    _pubkeyhash_version_byte = 71
+
 import hashlib, binascii
 t='123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz'
 
