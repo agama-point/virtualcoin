@@ -211,7 +211,7 @@ while True:
                 plotMat(win,myMatrix)
                 print "time noise>" + str(time.time()-startTime)             
                                          
-        if bt7.testClickButt(x,y): #info
+        if bt7.testClickButt(x,y): #info save
 		print("---save---info---")
                 print(cisloCrypto)
                 wifinfo = numtowif(cisloCrypto) 
@@ -227,13 +227,13 @@ while True:
                 plotMat(win,myMatrix)
                 print "time info save>" + str(time.time()-startTime)    
              
-        if bt4.testClickButt(x,y):
+        if bt4.testClickButt(x,y): #info load
                 print("---load---info---")
                 filetPng = myDir+"temp.png"
                 myBin = loadMat(win,filetPng,myMatrix,sel)
-                print("bin:"+myBin[:260])
+                print("bin:"+myBin[:256])
                 #hexinfo=bin8tohex(myBin[:160])
-		print "load > "+bin7tostr(myBin)
+		print "load > "+bin7tostr(myBin[:256])
                 #print("hex:"+hexinfo)
                 #print("int:"+str(int(hexinfo, base=16)))
                 plotMat(win,myMatrix)
