@@ -222,11 +222,13 @@ while True:
 		if (ch1.getChBox()): #sel1=test	
                    #infoMat(myMatrix,sel,"0b01010100110011001100000111110101010101")
 		   infoMat(myMatrix,sel,strtobin7(teststr))
-		   print teststr,strtobin7(teststr)	
+		   print teststr	
+		   print strtobin7(teststr)[:100]	
                 else:
 		   infoMat(myMatrix,sel,strtobin7(wifinfo))
 		   print(cisloCrypto)
-		   print wifinfo,strtobin7(wifinfo)
+		   print wifinfo
+		   print strtobin7(wifinfo)[:100]
                 plotMat(win,myMatrix)
                 print "time info save>" + str(time.time()-startTime)    
              
@@ -234,7 +236,8 @@ while True:
                 print("---load---info---")
                 filetPng = myDir+"temp.png"
                 myBin = loadMat(win,filetPng,myMatrix,sel)
-                print("load bin: "+myBin[:256])
+                print("load bin: ")
+		print(myBin[:100])
                 #hexinfo=bin8tohex(myBin[:160])
 		print "load > "+bin7tostr(myBin[:256])
                 #print("hex:"+hexinfo)
