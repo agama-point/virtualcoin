@@ -253,7 +253,7 @@ def infoMat(myMatrix,sel,how): # 0 for clear, 7 for black
       #    myMatrix[x,y]= 0    
       
 def loadMat(window,filePng,myMatrix,sel):
-   expBin = "0b"
+   expBin = "" ##"0b"
    ib=0
    obr = pygame.image.load(filePng)
    obrRect = obr.get_rect()
@@ -295,9 +295,7 @@ def loadMatQR(window,filePng,myMatrix,dx,dy): #  invert
           myMatrix[x+dx,y+dy]= 7          
        else:      
           myMatrix[x+dx,y+dy]= 0          
-              
-        
-        
+                 
 def doBmp128x128(co):
     jmeno_obrazku=co
     soubor=open(jmeno_obrazku, "rb")  # nacteni obrazku do promenne data[]
