@@ -26,6 +26,8 @@ logTime = datetime.now().strftime("%Y%m%d_%H%M%S")
 logFile = myDir+logTime+"log.txt"
 fileJpg = myDir+logTime+".jpg"
 filePng = myDir+logTime+".png"
+
+coin="BTC" #LTC,NMC,VTC
 wbtc = getWBTC()
 wcoin = wbtc
 pbtc=wbtc+wbtc
