@@ -273,8 +273,8 @@ def loadMat(window,filePng,myMatrix,sel):
           myMatrix[x,y]= 0
           expBin = expBin+"0"
        ib=ib+1
-       if (ib>256):
-         ib=256
+       if (ib>512):
+         ib=512
    return expBin          
         
 def loadMatQR(window,filePng,myMatrix,dx,dy): #  invert
