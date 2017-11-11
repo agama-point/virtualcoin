@@ -225,7 +225,7 @@ while True:
 		   print teststr	
 		   print strtobin7(teststr)[:100]	
                 else:
-		   infoMat(myMatrix,sel,strtobin7(wifinfo))
+		   infoMat(myMatrix,sel,"01010100000000"+strtobin7(wifinfo))
 		   print(cisloCrypto)
 		   print wifinfo
 		   print strtobin7(wifinfo)[:100]
