@@ -89,9 +89,14 @@ bty = 10
 btx1 = 660
 btx2 = btx1+100
 chy = 390
+chyc = chy+35
 ch1 = CheckBox(win,200,chy);ch1.initChBox("select 1")
 ch2 = CheckBox(win,330,chy);ch2.initChBox("select 2")
 ch3 = CheckBox(win,460,chy);ch3.initChBox("select 3")
+
+ch1c = CheckBox(win,200,chyc);ch1c.initChBox("L")
+ch2c = CheckBox(win,330,chyc);ch2c.initChBox("N")
+ch3c = CheckBox(win,460,chyc);ch3c.initChBox("V")
 
 bt1 = ButtBox(win,btx1,bty);bt1.labelButt("clear")        
 bt3 = ButtBox(win,btx1,bty+butty);bt3.labelButt("invert")
@@ -180,6 +185,10 @@ while True:
         if (ch1.getChBox()): sel = 2
         if (ch2.getChBox()): sel = 5
         if (ch3.getChBox()): sel = 10
+	coin = "BTC"	
+	if (ch1c.getChBox()): coin = "LTC"	
+        if (ch2c.getChBox()): coin = "NMC"	
+        if (ch3c.getChBox()): coin = "VTC"	
         
         if bt1.testClickButt(x,y):
                 setMat(myMatrix,0)
@@ -256,7 +265,7 @@ while True:
                 mxy = 128
                 mxStr(win, myMatrix,notePrefix+logTime,5,mxy)
                 mxStr(win, myMatrix,wcoin,5,mxy+10)
-                mxStr(win, myMatrix,"...",5,mxy+20)
+                mxStr(win, myMatrix,coin,5,mxy+20)
                 #mxStr(win, myMatrix,(wbtc+wbtc),5,161)            
                 mxStr(win, myMatrix,oeShort(pcoin,22),5,mxy+30)    
                 mxStr(win, myMatrix,"octopusEngine",5,mxy+40) 
