@@ -267,9 +267,9 @@ while True:
         if bt9.testClickButt(x,y):  # test wallet 
                 setMat(myMatrix,0)
                 mxy = 128
-                mxStr(win, myMatrix,notePrefix+logTime,5,mxy)
+                mxStr(win, myMatrix,coin+".test: "+logTime,5,mxy)
                 mxStr(win, myMatrix,wcoin,5,mxy+10)
-                mxStr(win, myMatrix,coin,5,mxy+20)
+                mxStr(win, myMatrix,".....",5,mxy+20)
                 #mxStr(win, myMatrix,(wbtc+wbtc),5,161)            
                 mxStr(win, myMatrix,oeShort(pcoin,22),5,mxy+30)    
                 mxStr(win, myMatrix,"octopusEngine",5,mxy+40) 
