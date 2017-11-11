@@ -234,7 +234,7 @@ while True:
                 print("---load---info---")
                 filetPng = myDir+"temp.png"
                 myBin = loadMat(win,filetPng,myMatrix,sel)
-                print("bin:"+myBin[:256])
+                print("load bin: "+myBin[:256])
                 #hexinfo=bin8tohex(myBin[:160])
 		print "load > "+bin7tostr(myBin[:256])
                 #print("hex:"+hexinfo)
