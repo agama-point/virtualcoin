@@ -217,13 +217,13 @@ while True:
                 wifinfo = numtowif(cisloCrypto) 
                 print("wif:"+wifinfo)
                 #infostr = strtobin(wifcislo)
-                hexinfo = hex(cislo)
-                print("hex:"+hexinfo)
+                #hexinfo = hex(cislo)
+                #print("hex:"+hexinfo)
                 
 		if (ch1.getChBox()): #sel1=test	
                    infoMat(myMatrix,sel,"0b01010100110011001100000111110101010101")
                 else:
-		   infoMat(myMatrix,sel,hextobin(hexinfo))
+		   infoMat(myMatrix,sel,strtobin7(wifinfo))
                 plotMat(win,myMatrix)
                 print "time info save>" + str(time.time()-startTime)    
              
@@ -232,8 +232,9 @@ while True:
                 filetPng = myDir+"temp.png"
                 myBin = loadMat(win,filetPng,myMatrix,sel)
                 print("bin:"+myBin[:260])
-                hexinfo=bin8tohex(myBin[:160])
-                print("hex:"+hexinfo)
+                #hexinfo=bin8tohex(myBin[:160])
+		print "load > "+bin7tostr(myBin)
+                #print("hex:"+hexinfo)
                 #print("int:"+str(int(hexinfo, base=16)))
                 plotMat(win,myMatrix)
                 print "time info>" + str(time.time()-startTime)
