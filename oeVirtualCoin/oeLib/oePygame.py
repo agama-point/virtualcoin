@@ -253,7 +253,7 @@ def infoMat(myMatrix,sel,how): # 0 for clear, 7 for black
       #    myMatrix[x,y]= 0    
       
 def loadMat(window,filePng,myMatrix,sel):
-   expBin = "0000" ##"0b"
+   expBin = "000" ##"0b"
    ib=0
    obr = pygame.image.load(filePng)
    obrRect = obr.get_rect()
