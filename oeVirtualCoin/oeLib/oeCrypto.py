@@ -75,7 +75,7 @@ def bintostr(bin):
   try:  
      n = int(bin, 2)
      sret = binascii.unhexlify('%x' % n)
-  exept:
+  except:
      sret = "*"
   return sret
 
