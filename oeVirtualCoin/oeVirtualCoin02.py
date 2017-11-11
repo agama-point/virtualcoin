@@ -220,16 +220,17 @@ while True:
                 #hexinfo = hex(cislo)
                 #print("hex:"+hexinfo)
                 teststr = "abcdefgxyz123567ABCDXYZ"
+		testbPrefix = "000000011111110000000"
 		if (ch1.getChBox()): #sel1=test	
                    #infoMat(myMatrix,sel,"0b01010100110011001100000111110101010101")
 		   infoMat(myMatrix,sel,strtobin7(teststr))
 		   print teststr	
 		   print strtobin7(teststr)[:100]	
                 else:
-		   infoMat(myMatrix,sel,"000000011111110000000"+strtobin7(wifinfo))
+		   infoMat(myMatrix,sel,testbPrefix+strtobin7(wifinfo))
 		   print(cisloCrypto)
 		   print wifinfo
-		   print strtobin7(wifinfo)[:100]
+		   print testbPrefix+strtobin7(wifinfo)[:100]
                 plotMat(win,myMatrix)
                 print "time info save>" + str(time.time()-startTime)    
              
