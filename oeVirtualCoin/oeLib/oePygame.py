@@ -233,8 +233,8 @@ def saveMat(window,filePng,myMatrix):
 def infoMat(myMatrix,sel,how): # 0 for clear, 7 for black
   nlines = 7 
   # 7 lines init noise
-  for y in range(hB):
-    for x in range(nlines): 
+  for y in range(nlines):
+    for x in range(hA): 
          if (int(random.random())):   # dvoubarevna windowsovska bitmapa ma opacne nastavene bity nez displej:
               myMatrix[x,y]= 0                  
          else:
@@ -242,8 +242,8 @@ def infoMat(myMatrix,sel,how): # 0 for clear, 7 for black
                
   # main data (max nlines lines) 
   ih=0
-  for y in range(hB):
-    for x in range(nlines):
+  for y in range(nlines):
+    for x in range(hA):
       ih=ih+1
       if (sel==3):
          if (x%2):    
