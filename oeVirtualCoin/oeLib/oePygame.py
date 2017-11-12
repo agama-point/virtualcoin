@@ -231,7 +231,7 @@ def saveMat(window,filePng,myMatrix):
    pygame.image.save(window,filePng)
    
 def infoMat(myMatrix,sel,how): # 0 for clear, 7 for black
-  nlines = 5 
+  nlines = 2 
   # 7 lines init noise
   for y in range(nlines):
     for x in range(hA): 
@@ -242,7 +242,8 @@ def infoMat(myMatrix,sel,how): # 0 for clear, 7 for black
                
   # main data (max nlines lines) 
   ih=0
-  ihmax = len(str(how)) 
+  ihmax = len(str(how))
+  print "ihmax:"+str(ihmax)
   for y in range(nlines):
     for x in range(hA):
       ih=ih+1
