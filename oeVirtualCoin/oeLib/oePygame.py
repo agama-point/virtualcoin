@@ -231,15 +231,24 @@ def saveMat(window,filePng,myMatrix):
    pygame.image.save(window,filePng)
    
 def infoMat(myMatrix,sel,how): # 0 for clear, 7 for black
+  nlines = 7 
+  # 7 lines init noise
+  for y in range(hB):
+    for x in range(nlines): 
+         if (int(random.random())):   # dvoubarevna windowsovska bitmapa ma opacne nastavene bity nez displej:
+              myMatrix[zx,zy]= 0                  
+         else:
+              myMatrix[zx,zy]= 7
+  # main data (max 7 lines) 
   ih=0
   for y in range(hB):
-    for x in range(hA):
+    for x in range(nlines):
       ih=ih+1
       if (sel==3):
          if (x%2):    
             myMatrix[x,y]= 0
          else:    
-            myMatrix[x,y]= 7  
+            myMatrix[x,y]= 7      
       else: 
        try:
          if (str(how)[ih+2]=="0"):
