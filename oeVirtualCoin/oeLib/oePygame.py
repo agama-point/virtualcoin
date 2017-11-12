@@ -236,10 +236,11 @@ def infoMat(myMatrix,sel,how): # 0 for clear, 7 for black
   for y in range(hB):
     for x in range(nlines): 
          if (int(random.random())):   # dvoubarevna windowsovska bitmapa ma opacne nastavene bity nez displej:
-              myMatrix[zx,zy]= 0                  
+              myMatrix[x,y]= 0                  
          else:
-              myMatrix[zx,zy]= 7
-  # main data (max 7 lines) 
+              myMatrix[x,y]= 7
+               
+  # main data (max nlines lines) 
   ih=0
   for y in range(hB):
     for x in range(nlines):
