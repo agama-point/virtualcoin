@@ -216,6 +216,7 @@ while True:
         if bt7.testClickButt(x,y): #info save
 		print("---save---info---")                
                 wifinfo = numtowif(cisloCrypto) 
+		strsave = "frag "+pcoin+" ment"
                 #print("wif:"+wifinfo)
                 #infostr = strtobin(wifcislo)
                 #hexinfo = hex(cislo)
@@ -228,10 +229,10 @@ while True:
 		   print teststr	
 		   print strtobin7(teststr)[:100]	
                 else:
-		   infoMat(myMatrix,sel,testbPrefix+strtobin7(wifinfo))
-		   print(cisloCrypto)
-		   print wifinfo
-		   print testbPrefix+strtobin7(wifinfo)[:100]
+		   infoMat(myMatrix,sel,testbPrefix+strtobin7(strsave))
+		   #print(cisloCrypto)
+		   print strsave
+		   print testbPrefix+strtobin7(strsave)[:100]
                 plotMat(win,myMatrix)
                 print "time info save>" + str(time.time()-startTime)    
              
