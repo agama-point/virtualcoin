@@ -233,9 +233,9 @@ def saveMat(window,filePng,myMatrix):
 def infoMat(myMatrix,sel,how): # 0 for clear, 7 for black
   nlines = 2 
   # 7 lines init noise
-  for y in range(nlines):
+  for y in range(nlines+3):
     for x in range(hA): 
-         if (int(random.random())):   # dvoubarevna windowsovska bitmapa ma opacne nastavene bity nez displej:
+         if (int(random.random())):  
               myMatrix[x,y]= 0                  
          else:
               myMatrix[x,y]= 7
@@ -261,10 +261,7 @@ def infoMat(myMatrix,sel,how): # 0 for clear, 7 for black
              myMatrix[x,y]= 7
         except:
           err=True
-            
-       # if (x<10):         
-      #    myMatrix[x,y]= 0    
-      
+       
 def loadMat(window,filePng,myMatrix,sel):
    expBin = "000" ##"0b"
    ib=0
@@ -272,8 +269,8 @@ def loadMat(window,filePng,myMatrix,sel):
    obrRect = obr.get_rect()
    window.blit(obr, obrRect)    
    #pygame.display.flip()
-   for y in range(3): #hB 
-    for x in range(hA):  #hB
+   for y in range(hB):  
+    for x in range(hA):  
        cR = window.get_at((x,y))[0] # get RGB of one pixel from camera-image 
        cG = window.get_at((x,y))[1]
        cB = window.get_at((x,y))[2]
