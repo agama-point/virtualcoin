@@ -242,6 +242,7 @@ def infoMat(myMatrix,sel,how): # 0 for clear, 7 for black
                
   # main data (max nlines lines) 
   ih=0
+  ihmax = len(str(how)) 
   for y in range(nlines):
     for x in range(hA):
       ih=ih+1
@@ -250,14 +251,15 @@ def infoMat(myMatrix,sel,how): # 0 for clear, 7 for black
             myMatrix[x,y]= 0
          else:    
             myMatrix[x,y]= 7      
-      else: 
-       try:
-         if (str(how)[ih+2]=="0"):
-           myMatrix[x,y]= 0
-         else:    
-           myMatrix[x,y]= 7
-       except:
-         err=True
+      else:
+       if (ih<ihmax+3):  
+        try:
+          if (str(how)[ih+2]=="0"):
+             myMatrix[x,y]= 0
+          else:    
+             myMatrix[x,y]= 7
+        except:
+          err=True
             
        # if (x<10):         
       #    myMatrix[x,y]= 0    
