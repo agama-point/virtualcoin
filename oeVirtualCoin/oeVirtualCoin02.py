@@ -13,6 +13,7 @@ from oeLib.oePygame import *
 from myWallets import *
 from oeLib.oeCrypto import * 
 testCrypto = True
+ver="v0.2-17/11"
 
 font={}             # font from extern file
 myMatrix={}     # main
@@ -278,7 +279,7 @@ while True:
                 mxy = 128
                 mxStr(win, myMatrix,coin+".test: "+logTime,5,mxy)
                 mxStr(win, myMatrix,wcoin,5,mxy+10)
-                mxStr(win, myMatrix,".....",5,mxy+20)
+                mxStr(win, myMatrix,ver,5,mxy+20)
                 #mxStr(win, myMatrix,(wbtc+wbtc),5,161)            
                 mxStr(win, myMatrix,oeShort(pcoin,22),5,mxy+30)    
                 mxStr(win, myMatrix,"octopusEngine",5,mxy+40) 
