@@ -290,8 +290,8 @@ while True:
                 qrx=5
                 qry=5
                 
-                addLog(logFile,pcoin+"x")
-                createQR(pcoin+"x",2)
+                addLog(logFile,pcoin)
+                createQR(pcoin,2)
                 loadMatQR(win,filetPng,myMatrix,150,qry)
                 obr = pygame.image.load(filetPng) 
                 obrRect = obr.get_rect()
