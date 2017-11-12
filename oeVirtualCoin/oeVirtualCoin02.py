@@ -277,20 +277,21 @@ while True:
                              
         if bt9.testClickButt(x,y):  # test wallet 
                 setMat(myMatrix,0)
+		mxx = 7
                 mxy = 128
-                mxStr(win, myMatrix,coin+".test: "+logTime,5,mxy)
-                mxStr(win, myMatrix,wcoin,5,mxy+10)
-                mxStr(win, myMatrix,ver,5,mxy+20)
+                mxStr(win, myMatrix,coin+".test: "+logTime,mxx,mxy)
+                mxStr(win, myMatrix,wcoin,mxx,mxy+10)
+                mxStr(win, myMatrix,ver,mxx,mxy+20)
                 #mxStr(win, myMatrix,(wbtc+wbtc),5,161)            
-                mxStr(win, myMatrix,oeShort(pcoin,22),5,mxy+30)    
-                mxStr(win, myMatrix,"octopusEngine",5,mxy+40) 
+                mxStr(win, myMatrix,oeShort(pcoin,17),mxx,mxy+30)    
+                mxStr(win, myMatrix,"octopusEngine",mxx,mxy+40) 
            
                 filetPng = myDir+"tempqr.png" 
                 qrx=5
                 qry=5
                 
-                addLog(logFile,pcoin)
-                createQR(pcoin,2)
+                addLog(logFile,pcoin+"x")
+                createQR(pcoin+"x",2)
                 loadMatQR(win,filetPng,myMatrix,150,qry)
                 obr = pygame.image.load(filetPng) 
                 obrRect = obr.get_rect()
