@@ -115,6 +115,7 @@ bt10 = ButtBox(win,btx2,bty+butty*4);bt10.labelButt("test")
 bt12 = ButtBox(win,btx2,bty+butty*5);bt12.labelButt("quit")
 
 def clickGen1():
+	        global pcoin,wcoin 
                 print("---gen1---")
 		if (ch1.getChBox()): #sel1 = from PK
                   pkall = createWall(coin,getPBTC())
