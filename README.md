@@ -8,7 +8,7 @@ python test - pk and wallets<br />
 <hr />
 <b>first pygame experiment:</b><br />
 select V fort Vertcoin<br />
-gen1 > generate private key an wall (bip32)<br />
+gen1 > generate private key an wall (bip32)<br /><br />
 <img src="https://raw.githubusercontent.com/octopusengine/virtualcoin/master/images/virtcoin02.png" alt="oeVirtC" width="650">
 
 
