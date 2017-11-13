@@ -126,12 +126,12 @@ def clickGen1():
                 print("0: "+str(pkall[0]))
                 pcoin=str(pkall[1])
                 addLog(logFile,"1: "+pcoin)
-		print("("+len(pcoin)+")")
+		print("("+str(len(pcoin))+")")
                 addLog(logFile,"2: "+str(pkall[2]))
                 addLog(logFile,"3: "+str(pkall[3]))
                 wcoin=str(pkall[4])
                 addLog(logFile,"4: "+wcoin)
-		print("("+len(wcoin)+")")
+		print("("+str(len(wcoin))+")")
 
 def clickQr1():
                 setMat(myMatrix,0)
