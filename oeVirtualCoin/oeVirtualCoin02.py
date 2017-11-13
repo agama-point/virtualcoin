@@ -109,7 +109,7 @@ bt11 = ButtBox(win,btx1,bty+butty*5);bt11.labelButt("qr2")
 
 bt2 = ButtBox(win,btx2,bty);bt2.labelButt("save")
 bt4 = ButtBox(win,btx2,bty+butty);bt4.labelButt("load")
-bt6 = ButtBox(win,btx2,bty+butty*2);bt6.labelButt("gen1")
+bt6 = ButtBox(win,btx2,bty+butty*2);bt6.labelButt("> gen1 <")
 bt8 = ButtBox(win,btx2,bty+butty*3);bt8.labelButt("gen2")
 bt10 = ButtBox(win,btx2,bty+butty*4);bt10.labelButt("test")
 bt12 = ButtBox(win,btx2,bty+butty*5);bt12.labelButt("quit")
