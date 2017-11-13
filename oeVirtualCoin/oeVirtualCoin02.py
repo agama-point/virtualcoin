@@ -114,6 +114,56 @@ bt8 = ButtBox(win,btx2,bty+butty*3);bt8.labelButt("gen2")
 bt10 = ButtBox(win,btx2,bty+butty*4);bt10.labelButt("test")
 bt12 = ButtBox(win,btx2,bty+butty*5);bt12.labelButt("quit")
 
+def clickGen1():
+                print("---gen1---")
+		if (ch1.getChBox()): #sel1 = from PK
+                  pkall = createWall(coin,getPBTC())
+		else:
+		  pkall = createWall(coin,"x") #new PK / entropy...
+		        #private_key, pkwif,public_key,pubhex, wall 
+                print "time info>" + str(time.time()-startTime) 
+                print("0: "+str(pkall[0]))
+                pcoin=str(pkall[1])
+                addLog(logFile,"1: "+pcoin)
+                addLog(logFile,"2: "+str(pkall[2]))
+                addLog(logFile,"3: "+str(pkall[3]))
+                wcoin=str(pkall[4])
+                addLog(logFile,"4: "+wcoin)
+
+def clickQr1():
+                setMat(myMatrix,0)
+                mxx = 7
+                mxy = 128
+                mxStr(win, myMatrix,coin+".test: "+logTime,mxx,mxy)
+                mxStr(win, myMatrix,wcoin,mxx,mxy+10)
+                mxStr(win, myMatrix,ver,mxx,mxy+20)
+                #mxStr(win, myMatrix,(wbtc+wbtc),5,161)            
+                mxStr(win, myMatrix,oeShort(pcoin,17),mxx,mxy+30)    
+                mxStr(win, myMatrix,"octopusEngine",mxx,mxy+40) 
+           
+                filetPng = myDir+"tempqr.png" 
+                qrx=5
+                qry=5
+                
+                addLog(logFile,pcoin)
+                createQR(pcoin,2)
+                loadMatQR(win,filetPng,myMatrix,150,qry)
+                obr = pygame.image.load(filetPng) 
+                obrRect = obr.get_rect()
+                obrRect = obrRect.move(hX*2+100,0)
+                win.blit(obr, obrRect)                               
+                
+                createQR(wcoin,3)
+                addLog(logFile,wcoin)
+                loadMatQR(win,filetPng,myMatrix,qrx,qry)                
+                obr = pygame.image.load(filetPng) 
+                obrRect = obr.get_rect()
+                obrRect = obrRect.move(hX*2+100,0)
+                win.blit(obr, obrRect)             
+                         
+                plotMat(win,myMatrix)
+
+
 def startWin():
   print "clrMat>"
   setMat(myMatrix,0)
@@ -249,20 +299,11 @@ while True:
                 print "time info>" + str(time.time()-startTime)
                 
         if bt6.testClickButt(x,y):
-                print("---gen1---")
-		if (ch1.getChBox()): #sel1 = from PK
-                  pkall = createWall(coin,getPBTC())
-		else:
-		  pkall = createWall(coin,"x") #new PK / entropy...
-		        #private_key, pkwif,public_key,pubhex, wall 
-                print "time info>" + str(time.time()-startTime) 
-                print("0: "+str(pkall[0]))
-                pcoin=str(pkall[1])
-                addLog(logFile,"1: "+pcoin)
-                addLog(logFile,"2: "+str(pkall[2]))
-                addLog(logFile,"3: "+str(pkall[3]))
-                wcoin=str(pkall[4])
-                addLog(logFile,"4: "+wcoin)
+                clickGen1()
+		clickQr1()
+                                     
+        if bt9.testClickButt(x,y):  # qr1 test wallet 
+                clickQr1()
         
 	if bt10.testClickButt(x,y):
                 print("---test unspent---")
@@ -274,41 +315,8 @@ while True:
                 sumUnsp = str(oeJTxSumVal(unspent(wbtc)))
 		print(oeShort(wbtc,8)+" > "+sumUnsp)
 		mxStr(win, myMatrix,"("+sumUnsp+")",5,mxy+20)
-                             
-        if bt9.testClickButt(x,y):  # test wallet 
-                setMat(myMatrix,0)
-		mxx = 7
-                mxy = 128
-                mxStr(win, myMatrix,coin+".test: "+logTime,mxx,mxy)
-                mxStr(win, myMatrix,wcoin,mxx,mxy+10)
-                mxStr(win, myMatrix,ver,mxx,mxy+20)
-                #mxStr(win, myMatrix,(wbtc+wbtc),5,161)            
-                mxStr(win, myMatrix,oeShort(pcoin,17),mxx,mxy+30)    
-                mxStr(win, myMatrix,"octopusEngine",mxx,mxy+40) 
-           
-                filetPng = myDir+"tempqr.png" 
-                qrx=5
-                qry=5
-                
-                addLog(logFile,pcoin)
-                createQR(pcoin,2)
-                loadMatQR(win,filetPng,myMatrix,150,qry)
-                obr = pygame.image.load(filetPng) 
-                obrRect = obr.get_rect()
-                obrRect = obrRect.move(hX*2+100,0)
-                win.blit(obr, obrRect)                               
-                
-                createQR(wcoin,3)
-                addLog(logFile,wcoin)
-                loadMatQR(win,filetPng,myMatrix,qrx,qry)                
-                obr = pygame.image.load(filetPng) 
-                obrRect = obr.get_rect()
-                obrRect = obrRect.move(hX*2+100,0)
-                win.blit(obr, obrRect) 
-                
-                         
-                plotMat(win,myMatrix)
-                                                                
+		clickQr1()
+	
         if bt2.testClickButt(x,y):
                 if (ch1.getChBox()):
                   saveJpg(win,fileJpg,sizeWinX, sizeWinY)
