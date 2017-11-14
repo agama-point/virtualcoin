@@ -13,3 +13,7 @@ gen1 > generate private key an wall (bip32)<br /><br />
 
 
 <br />
+<br />
+gen1 = gen (new or from PK) + create QR and save log
+<br />
+
