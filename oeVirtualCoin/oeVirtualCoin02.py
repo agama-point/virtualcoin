@@ -15,6 +15,7 @@ from oeLib.oeCrypto import *
 testCrypto = True
 ver="v0.2-17/11"
 
+myMatrix={}     # main
 font={}             # font from extern file
 myMatSil={}     # 
 myMatFilt={}    # filt   
