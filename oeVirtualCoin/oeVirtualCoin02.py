@@ -103,9 +103,12 @@ ch3c = CheckBox(win,460,chyc);ch3c.initChBox("V")
 bt1 = ButtBox(win,btx1,bty);bt1.labelButt("clear")        
 bt3 = ButtBox(win,btx1,bty+butty);bt3.labelButt("invert")
 bt5 = ButtBox(win,btx1,bty+butty*2);bt5.labelButt("noise")
-bt7 = ButtBox(win,btx1,bty+butty*3);bt7.labelButt("info")
-bt9 = ButtBox(win,btx1,bty+butty*4);bt9.labelButt("qr1")
-bt11 = ButtBox(win,btx1,bty+butty*5);bt11.labelButt("qr2")
+
+bt7 = ButtBox(win,btx1,bty+butty*3);bt7.labelButt("octop")
+bt9 = ButtBox(win,btx1,bty+butty*4);bt9.labelButt("world")
+bt11 = ButtBox(win,btx1,bty+butty*5);bt11.labelButt("info")
+bt13 = ButtBox(win,btx1,bty+butty*6);bt13.labelButt("qr1")
+bt15 = ButtBox(win,btx1,bty+butty*7);bt15.labelButt("qr2")
 
 bt2 = ButtBox(win,btx2,bty);bt2.labelButt("save")
 bt4 = ButtBox(win,btx2,bty+butty);bt4.labelButt("load")
@@ -266,7 +269,7 @@ while True:
                 plotMat(win,myMatrix)
                 print "time noise>" + str(time.time()-startTime)             
                                          
-        if bt7.testClickButt(x,y): #info save
+        if bt11.testClickButt(x,y): #info save
 		print("---save---info---")                
                 wifinfo = numtowif(cisloCrypto) 
 		strsave = "frag "+pcoin+" ment"
@@ -305,7 +308,7 @@ while True:
                 clickGen1()
 		clickQr1()
                                      
-        if bt9.testClickButt(x,y):  # qr1 test wallet 
+        if bt13.testClickButt(x,y):  # qr1 test wallet 
                 clickQr1()
         
 	if bt10.testClickButt(x,y):
