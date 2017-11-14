@@ -106,9 +106,10 @@ bt5 = ButtBox(win,btx1,bty+butty*2);bt5.labelButt("noise")
 
 bt7 = ButtBox(win,btx1,bty+butty*3);bt7.labelButt("octop")
 bt9 = ButtBox(win,btx1,bty+butty*4);bt9.labelButt("world")
-bt11 = ButtBox(win,btx1,bty+butty*5);bt11.labelButt("info")
-bt13 = ButtBox(win,btx1,bty+butty*6);bt13.labelButt("qr1")
-bt15 = ButtBox(win,btx1,bty+butty*7);bt15.labelButt("qr2")
+bt11 = ButtBox(win,btx1,bty+butty*5);bt11.labelButt(">info1")
+bt13 = ButtBox(win,btx1,bty+butty*6);bt13.labelButt("info2")
+bt15 = ButtBox(win,btx1,bty+butty*7);bt15.labelButt(">qr1")
+bt17 = ButtBox(win,btx1,bty+butty*8);bt17.labelButt("qr2")
 
 bt2 = ButtBox(win,btx2,bty);bt2.labelButt("save")
 bt4 = ButtBox(win,btx2,bty+butty);bt4.labelButt("load")
@@ -116,6 +117,13 @@ bt6 = ButtBox(win,btx2,bty+butty*2);bt6.labelButt("> gen1 <")
 bt8 = ButtBox(win,btx2,bty+butty*3);bt8.labelButt("gen2")
 bt10 = ButtBox(win,btx2,bty+butty*4);bt10.labelButt("test")
 bt12 = ButtBox(win,btx2,bty+butty*5);bt12.labelButt("quit")
+
+def clickOctop():
+  doBmp2Mat(myMatrix,"src/o128i.bmp",20,5)
+  print "time>" + str(time.time()-startTime)
+  print "printMat>"
+  plotMat(win,myMatrix)
+  print "time plot>" + str(time.time()-startTime)
 
 def clickGen1():
 	        global pcoin,wcoin 
@@ -205,12 +213,7 @@ def startWin():
   # nacteni dvoubarevneho BMP obrazku 128x128 bodu do promenne mapa[]
   print "bmp>"
   #doBmp128x128("knize.bmp")
-  doBmp2Mat(myMatrix,"src/o128i.bmp",20,5)
-  print "time>" + str(time.time()-startTime)
-  print "printMat>"
-  plotMat(win,myMatrix)
-  print "time plot>" + str(time.time()-startTime)
-
+  clickOctop()
 #myMatrix2 = myMatrix
 #copyMat(myMatrix,myMatrix2)
 #setMat(myMatrix,1)
@@ -267,7 +270,10 @@ while True:
                 addnoiseMat(myMatrix)
                 #mxStr(win, myMatrix,"noise",5,155)
                 plotMat(win,myMatrix)
-                print "time noise>" + str(time.time()-startTime)             
+                print "time noise>" + str(time.time()-startTime) 
+		
+	if bt7.testClickButt(x,y): #octop
+		clickOctop()
                                          
         if bt11.testClickButt(x,y): #info save
 		print("---save---info---")                
@@ -308,7 +314,7 @@ while True:
                 clickGen1()
 		clickQr1()
                                      
-        if bt13.testClickButt(x,y):  # qr1 test wallet 
+        if bt15.testClickButt(x,y):  # qr1 test wallet 
                 clickQr1()
         
 	if bt10.testClickButt(x,y):
