@@ -60,6 +60,8 @@ hW=hA*hBod #velikost
 hH=hB*hBod
 hX=0   #pozice
 hY=0
+mxx = 7 #matrix offset
+mxy = 128
 
 winMat = pygame.display.set_mode([hA,hB]) # Create the pygame matrix window
 win = pygame.display.set_mode([sizeWinX,sizeWinY]) # Create the pygame window
@@ -147,9 +149,7 @@ def clickGen1():
 		print("("+str(len(wcoin))+")")
 
 def clickQr1():
-                setMat(myMatrix,0)
-                mxx = 7
-                mxy = 128
+                setMat(myMatrix,0)                
                 mxStr(win, myMatrix,coin+".test: "+logTime,mxx,mxy)
                 mxStr(win, myMatrix,wcoin,mxx,mxy+10)
                 mxStr(win, myMatrix,ver,mxx,mxy+20)
