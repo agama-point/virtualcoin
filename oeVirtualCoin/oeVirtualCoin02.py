@@ -319,10 +319,10 @@ while True:
                   print u
                 sumUnsp = str(oeJTxSumVal(unspent(wbtc)))
 		print(oeShort(wbtc,8)+" > "+sumUnsp)
-		#mxStr(win, myMatrix,"("+sumUnsp+")",5,mxy+20)
+		#mxStr(win, myMatrix,"("+sumUnsp+")",5,mxy+20)		
+		clickQr1()
 		mxStr(win, myMatrix,wcoin+" ("+sumUnsp+")",mxx,mxy+10)
 		plotMat(win,myMatrix)
-		clickQr1()
 	
         if bt2.testClickButt(x,y):
                 if (ch1.getChBox()):
