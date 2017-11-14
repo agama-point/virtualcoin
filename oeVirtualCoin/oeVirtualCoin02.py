@@ -274,6 +274,10 @@ while True:
 		
 	if bt7.testClickButt(x,y): #octop
 		clickOctop()
+		
+	if bt9.testClickButt(x,y): #world		
+		doBmp2Mat(myMatrix,"src/world128x64b.bmp",20,5)
+                plotMat(win,myMatrix)
                                          
         if bt11.testClickButt(x,y): #info save
 		print("---save---info---")                
