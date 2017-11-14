@@ -325,6 +325,7 @@ while True:
 		plotMat(win,myMatrix)
 	
         if bt2.testClickButt(x,y):
+		filePng = myDir+logTime+coin[0]+".png"
                 if (ch1.getChBox()):
                   saveJpg(win,fileJpg,sizeWinX, sizeWinY)
                 else: 
