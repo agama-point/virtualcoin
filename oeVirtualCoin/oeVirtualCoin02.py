@@ -313,12 +313,12 @@ while True:
 	if bt10.testClickButt(x,y):
                 print("---test unspent---")
                 if (ch1.getChBox()):		
-                  h = history(wbtc)
+                  h = history(wcoin)
                   print h
-                  u = unspent(wbtc)
+                  u = unspent(wcoin)
                   print u
-                sumUnsp = str(oeJTxSumVal(unspent(wbtc)))
-		print(oeShort(wbtc,8)+" > "+sumUnsp)
+                sumUnsp = str(oeJTxSumVal(unspent(wcoin)))
+		print(oeShort(wcoin,8)+" > "+sumUnsp)
 		#mxStr(win, myMatrix,"("+sumUnsp+")",5,mxy+20)		
 		clickQr1()
 		mxStr(win, myMatrix,wcoin+" ("+sumUnsp+")",mxx,mxy+10)
