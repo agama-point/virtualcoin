@@ -1,6 +1,10 @@
 # -*- coding: cp1250 -*-
-import pyqrcode
-import pygame, random, sys, os, time
+#-----------------------
+# 2017/11/14 - v021.ok
+ver="v0.21-17/11"
+
+import sys, os, time, random
+import pygame, pyqrcode 
 from pygame.locals import * # MOUSEBUTTONDOWN...
 from json import *
 from datetime import datetime 
@@ -13,7 +17,6 @@ from oeLib.oePygame import *
 from myWallets import *
 from oeLib.oeCrypto import * 
 testCrypto = True
-ver="v0.2-17/11"
 
 myMatrix={}     # main
 font={}             # font from extern file
