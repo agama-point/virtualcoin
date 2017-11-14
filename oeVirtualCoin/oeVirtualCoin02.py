@@ -16,8 +16,6 @@ testCrypto = True
 ver="v0.2-17/11"
 
 font={}             # font from extern file
-myMatrix={}     # main
-myMatrix2={}    # temp
 myMatSil={}     # 
 myMatFilt={}    # filt   
 
@@ -238,16 +236,6 @@ def startWin():
   print "bmp>"
   #doBmp128x128("knize.bmp")
   clickOctop()
-#myMatrix2 = myMatrix
-#copyMat(myMatrix,myMatrix2)
-#setMat(myMatrix,1)
-#plotMat(win,myMatrix)
-#print "time clr2>" + str(time.time()-startTime)
-
-#myMatrix = myMatrix2
-#restoreMat(myMatrix,myMatrix2)
-#plotMat(win,myMatrix)
-#print "time plot2>" + str(time.time()-startTime)
 
 #hBod=2
 #creaMatSil()
@@ -255,6 +243,7 @@ def startWin():
 #print "time sil>" + str(time.time()-startTime)
 #print "time>" + str(time.time()-startTime)
 #pygame.quit()
+#----------------------------------------------------------------------------
 
 startWin()
 while True:
