@@ -278,7 +278,7 @@ while True:
 		clickOctop()
 		
 	if bt9.testClickButt(x,y): #world		
-		doBmp2Mat(myMatrix,"src/world128x64b.bmp",10,0)
+		doBmp2Mat(myMatrix,"src/world128x64i.bmp",10,0)
                 plotMat(win,myMatrix)
                                          
         if bt11.testClickButt(x,y): #info save
@@ -306,7 +306,7 @@ while True:
 	if bt17.testClickButt(x,y): #qr2
 		setMat(myMatrix,0) #clear
 		clickQr1()
-		doBmp2Mat(myMatrix,"src/world128x64b.bmp",10,0)
+		doBmp2Mat(myMatrix,"src/world128x64i.bmp",10,0)
 		clickInfo() 
                 plotMat(win,myMatrix)	
         
