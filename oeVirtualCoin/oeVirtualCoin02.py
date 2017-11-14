@@ -159,22 +159,24 @@ def clickQr1():
                 qrx=5
                 qry=5
                 
-                addLog(logFile,pcoin)
-                createQR(pcoin,2)
+                
+		createQR(wcoin,3)
+                addLog(logFile,wcoin)
                 loadMatQR(win,filetPng,myMatrix,150,qry)
                 obr = pygame.image.load(filetPng) 
                 obrRect = obr.get_rect()
                 obrRect = obrRect.move(200,0) #hX*2+100
                 win.blit(obr, obrRect)                               
                 
-                createQR(wcoin,3)
-                addLog(logFile,wcoin)
+                addLog(logFile,pcoin)
+                createQR(pcoin,2)
                 loadMatQR(win,filetPng,myMatrix,qrx,qry)                
                 obr = pygame.image.load(filetPng) 
                 obrRect = obr.get_rect()
                 obrRect = obrRect.move(10,0)
-                win.blit(obr, obrRect)             
-                         
+                win.blit(obr, obrRect) 
+		
+		createQR("123456789",1) #reset temp                         
                 plotMat(win,myMatrix)
 
 
