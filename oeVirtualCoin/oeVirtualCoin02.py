@@ -178,7 +178,29 @@ def clickQr1():
 		
 		createQR("123456789",1) #reset temp                         
                 plotMat(win,myMatrix)
-
+		
+def clickInfo():
+                print("---save---info---")                
+                wifinfo = numtowif(cisloCrypto) 
+		strsave = "frag "+pcoin+" ment"
+                #print("wif:"+wifinfo)
+                #infostr = strtobin(wifcislo)
+                #hexinfo = hex(cislo)
+                #print("hex:"+hexinfo)
+                teststr = "abcdefgxyz123567ABCDXYZ"
+		testbPrefix = "000000011111110000000"
+		if (ch1.getChBox()): #sel1=test	
+                   #infoMat(myMatrix,sel,"0b01010100110011001100000111110101010101")
+		   infoMat(myMatrix,sel,strtobin7(teststr))
+		   print teststr	
+		   print strtobin7(teststr)[:100]	
+                else:
+		   infoMat(myMatrix,sel,testbPrefix+strtobin7(strsave))
+		   #print(cisloCrypto)
+		   print strsave
+		   print testbPrefix+strtobin7(strsave)[:100]
+                plotMat(win,myMatrix)
+                print "time info save>" + str(time.time()-startTime)   
 
 def startWin():
   print "clrMat>"
@@ -282,27 +304,7 @@ while True:
                 plotMat(win,myMatrix)
                                          
         if bt11.testClickButt(x,y): #info save
-		print("---save---info---")                
-                wifinfo = numtowif(cisloCrypto) 
-		strsave = "frag "+pcoin+" ment"
-                #print("wif:"+wifinfo)
-                #infostr = strtobin(wifcislo)
-                #hexinfo = hex(cislo)
-                #print("hex:"+hexinfo)
-                teststr = "abcdefgxyz123567ABCDXYZ"
-		testbPrefix = "000000011111110000000"
-		if (ch1.getChBox()): #sel1=test	
-                   #infoMat(myMatrix,sel,"0b01010100110011001100000111110101010101")
-		   infoMat(myMatrix,sel,strtobin7(teststr))
-		   print teststr	
-		   print strtobin7(teststr)[:100]	
-                else:
-		   infoMat(myMatrix,sel,testbPrefix+strtobin7(strsave))
-		   #print(cisloCrypto)
-		   print strsave
-		   print testbPrefix+strtobin7(strsave)[:100]
-                plotMat(win,myMatrix)
-                print "time info save>" + str(time.time()-startTime)    
+		clickInfo() 
              
         if bt4.testClickButt(x,y): #info load
                 print("---load---info---")
@@ -322,6 +324,13 @@ while True:
                                      
         if bt15.testClickButt(x,y):  # qr1 test wallet 
                 clickQr1()
+		
+	if bt17.testClickButt(x,y): #qr2
+		setMat(myMatrix,0) #clear
+		clickQr1()
+		doBmp2Mat(myMatrix,"src/world128x64b.bmp",10,0)
+		clickInfo() 
+                plotMat(win,myMatrix)	
         
 	if bt10.testClickButt(x,y):
                 print("---test unspent---")
