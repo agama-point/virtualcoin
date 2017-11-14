@@ -155,8 +155,7 @@ def clickQr1():
            
                 filetPng = myDir+"tempqr.png" 
                 qrx=5
-                qry=5
-                
+                qry=5               
                 
 		createQR(wcoin,3)
                 addLog(logFile,wcoin)
@@ -220,21 +219,7 @@ def startWin():
   mxStr(win, myMatrix,"IMAGE text TEST",5,135)
   co = "size:" + str(hA)+"x"+str(hB)
   mxStr(win, myMatrix,co,5,145)
-  mxStr(win, myMatrix,wbtc,5,155)
-
-  ## qr test wall
-  #qrBig = pyqrcode.create(w11,error="L",version=27,mode="binary")
-  #qrBig.png("qr.png", scale = 6,module_color=[0,0,0,128],background=[0xff,0xff,0xcc])	
-	
-  #createQR(wbtc+wbtc+wbtc,3)
-  #obr = pygame.image.load(myDir+"tempqr.png") #src/knize.bmp
-  #obrRect = obr.get_rect()
-  #obrRect = obrRect.move(hX*2+hW,hY+200)
-  #win.blit(obr, obrRect)   
-
-  # nacteni dvoubarevneho BMP obrazku 128x128 bodu do promenne mapa[]
-  print "bmp>"
-  #doBmp128x128("knize.bmp")
+  mxStr(win, myMatrix,wbtc,5,155)  
   clickOctop()
 
 #hBod=2
