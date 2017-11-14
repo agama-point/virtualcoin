@@ -119,7 +119,7 @@ bt10 = ButtBox(win,btx2,bty+butty*4);bt10.labelButt("test")
 bt12 = ButtBox(win,btx2,bty+butty*5);bt12.labelButt("quit")
 
 def clickOctop():
-  doBmp2Mat(myMatrix,"src/o128i.bmp",20,5)
+  doBmp2Mat(myMatrix,"src/o128i.bmp",10,0)
   print "time>" + str(time.time()-startTime)
   print "printMat>"
   plotMat(win,myMatrix)
@@ -164,7 +164,7 @@ def clickQr1():
                 loadMatQR(win,filetPng,myMatrix,150,qry)
                 obr = pygame.image.load(filetPng) 
                 obrRect = obr.get_rect()
-                obrRect = obrRect.move(hX*2+100,0)
+                obrRect = obrRect.move(200,0) #hX*2+100
                 win.blit(obr, obrRect)                               
                 
                 createQR(wcoin,3)
@@ -172,7 +172,7 @@ def clickQr1():
                 loadMatQR(win,filetPng,myMatrix,qrx,qry)                
                 obr = pygame.image.load(filetPng) 
                 obrRect = obr.get_rect()
-                obrRect = obrRect.move(hX*2+100,0)
+                obrRect = obrRect.move(10,0)
                 win.blit(obr, obrRect)             
                          
                 plotMat(win,myMatrix)
@@ -276,7 +276,7 @@ while True:
 		clickOctop()
 		
 	if bt9.testClickButt(x,y): #world		
-		doBmp2Mat(myMatrix,"src/world128x64b.bmp",20,0)
+		doBmp2Mat(myMatrix,"src/world128x64b.bmp",10,0)
                 plotMat(win,myMatrix)
                                          
         if bt11.testClickButt(x,y): #info save
