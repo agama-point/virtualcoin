@@ -1,0 +1,5 @@
+pygame
+pybitcoin
+pypng
+pillow
+pyqrcode
